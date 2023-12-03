@@ -18,6 +18,19 @@ const numberWords = [
   "nine",
 ];
 
+// Read the data from the text file
+let readData = (callback) => {
+  let data = "";
+
+  readStream
+    .on("data", function (line) {
+      data += line;
+    })
+    .on("end", () => {
+      callback(data);
+    });
+};
+
 // Check for words that describe a number (moving forwards)
 function checkNumberWordsForwards(numberWord) {
   let result = numbers[numberWords.findIndex((word) => word == numberWord)];
@@ -51,19 +64,6 @@ function checkNumberWordsBackwards(numberWord) {
 
   return result;
 }
-
-// Read the data from the text file
-let readData = (callback) => {
-  let data = "";
-
-  readStream
-    .on("data", function (line) {
-      data += line;
-    })
-    .on("end", () => {
-      callback(data);
-    });
-};
 
 let x = readData(async (data) => {
   let lines = data.split("\n");
