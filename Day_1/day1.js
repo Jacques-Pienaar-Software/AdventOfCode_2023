@@ -2,7 +2,7 @@
 
 // Import fs module and create a readstream
 var fs = require("fs");
-var readStream = fs.createReadStream("./day1_input.txt", "utf-8");
+var readStream = fs.createReadStream("./inputs/day1_input.txt", "utf-8");
 
 // Initialize constant helper arrays for checking numbers
 const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
