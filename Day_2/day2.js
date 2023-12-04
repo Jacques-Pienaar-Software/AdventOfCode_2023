@@ -1,3 +1,6 @@
+// Expected GameSum = 2617
+// Expected MinimumPowerGameSum = 59795
+
 var fs = require("fs");
 
 // Helper variables
